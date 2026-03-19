@@ -1,24 +1,35 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
+export function RootLayout() {
+  return <Stack />;
+}
 
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabLayout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <NativeTabs>
+      <NativeTabs.Trigger name="index">
+        <Label>Sesh</Label>
+        <Icon sf="sportscourt.fill" drawable="custom_android_drawable" />
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="map">
+        <Icon sf="map" drawable="custom_settings_drawable" />
+        <Label>Map</Label>
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="addSesh">
+        <Icon sf="plus.circle.fill" drawable="custom_settings_drawable" />
+        <Label>Add Sesh</Label>
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="activity">
+        <Icon sf="figure.soccer" drawable="custom_settings_drawable" />
+        <Label>Activity</Label>
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="profile">
+        <Icon sf="person.crop.circle.fill" drawable="custom_settings_drawable" />
+        <Label>Profile</Label>
+      </NativeTabs.Trigger>
+
+    </NativeTabs>
   );
 }
