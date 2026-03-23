@@ -18,7 +18,7 @@ export default function FeedPage() {
 export function Tabs() {
   return (
     <View style ={styles.container}>
-      <Text>Tab [Sesh|Map|Add Sesh|Activity|Profile]</Text>
+      <Text></Text>
     </View>
   );
 }

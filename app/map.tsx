@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function MapTabs() {
   return (
     <View style ={styles.container}>
-      <Text>Tab [Sesh|Map|Add Sesh|Activity|Profile]</Text>
+      <Text>Map page</Text>
     </View>
   );
 }
